@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"58b49a05dc3df319","x":-880,"y":0,"width":250,"height":60,"type":"text","text":"renderer"},
+		{"id":"befdcb3df7d2e77e","x":-858,"y":-240,"width":250,"height":60,"type":"text","text":"dispathcer"},
+		{"id":"8572dd5857675d6a","x":-604,"y":200,"width":416,"height":60,"type":"text","text":""},
+		{"id":"ecb03a3574c382d5","x":-556,"y":-440,"width":320,"height":60,"type":"text","text":"keyboard event "},
+		{"id":"350abb2514968f52","x":-525,"y":60,"width":290,"height":60,"type":"text","text":"bitmap repainting"},
+		{"id":"55958bfc57c1d8ee","x":-520,"y":-60,"width":280,"height":60,"type":"text","text":"state operation"},
+		{"id":"27960040fb1328c1","x":-510,"y":-180,"width":290,"height":50,"type":"text","text":"command queue"},
+		{"id":"bc2b49666495aeef","x":-180,"y":-120,"width":250,"height":60,"type":"text","text":"executor"},
+		{"id":"f9bd49e4673bd8df","x":-160,"y":-380,"width":250,"height":60,"type":"text","text":"listenner"},
+		{"id":"a75d42a3daa12651","x":-525,"y":-320,"width":317,"height":50,"type":"text","text":"event queue as Arc"}
+	],
+	"edges":[
+		{"id":"3279dc5ceee6f0f2","fromNode":"ecb03a3574c382d5","fromSide":"right","toNode":"f9bd49e4673bd8df","toSide":"top"},
+		{"id":"987c66bf71296520","fromNode":"f9bd49e4673bd8df","fromSide":"bottom","toNode":"a75d42a3daa12651","toSide":"right"},
+		{"id":"9355f07a597b4ab4","fromNode":"a75d42a3daa12651","fromSide":"left","toNode":"befdcb3df7d2e77e","toSide":"top"},
+		{"id":"bdbaaff121b689cf","fromNode":"befdcb3df7d2e77e","fromSide":"bottom","toNode":"27960040fb1328c1","toSide":"left"},
+		{"id":"57729d8fbbd67684","fromNode":"27960040fb1328c1","fromSide":"right","toNode":"bc2b49666495aeef","toSide":"top"},
+		{"id":"dde96743fdff15fe","fromNode":"bc2b49666495aeef","fromSide":"bottom","toNode":"55958bfc57c1d8ee","toSide":"right"},
+		{"id":"4474f265725f78ea","fromNode":"55958bfc57c1d8ee","fromSide":"left","toNode":"58b49a05dc3df319","toSide":"top"},
+		{"id":"31948bef30c80e41","fromNode":"58b49a05dc3df319","fromSide":"bottom","toNode":"350abb2514968f52","toSide":"left"}
+	]
+}
