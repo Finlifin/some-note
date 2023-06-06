@@ -1,0 +1,15 @@
+# Fdb version 4
+["pdflatex"] 1681608308 "/home/fin/obsidian-note/mathematics/arc.tex" "arc.pdf" "arc" 1681608308 2
+  "/home/fin/obsidian-note/mathematics/arc.tex" 1681608308 155 35048b23fa01874109138d91253ac7a6 ""
+  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1680514707 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1680514707 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1680514707 39911 2da6c67557ec033436fe5418a70a8a61 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1681569373 8204104 20c17ccff4ee78344222690614d3b9b5 ""
+  "arc.aux" 1681608308 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "arc.tex" 1681608308 155 35048b23fa01874109138d91253ac7a6 ""
+  "ctex.sty" 0 -1 0 ""
+  (generated)
+  "arc.aux"
+  "arc.log"
+  "arc.pdf"
+  (rewritten before read)
