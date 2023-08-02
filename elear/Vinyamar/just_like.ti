@@ -1,0 +1,83 @@
+include "stdio.h" as cio
+
+import Util.Rand (fill_bits_rand)
+import Base.Mem
+
+
+-- 代码编写时，module内成员变量只有在实例化为变量后才可访问; 常量和函数都是默认公开的，可用local关键字指定私有，module内的new函数特殊，将会作为构造函数
+module Node is
+    name::String = String "None"
+    type::ThisType = Auto
+        where ThisType =data Sync | Async | Auto
+
+    new(str::*const u8) do
+        Node String str, Auto
+    end
+
+end --Node
+
+module Example is
+    how_about_today (today::Date) do
+        println_ "No!"
+    end
+    how_about_today (Sunday) do
+        println_ "I love today!"
+    end
+    how_about_today (Saturday) do
+        println_ "No bad."
+    end
+end
+
+
+data Date = Sunday | Saturday | Other
+
+data Ip = V4 (Uint8, Uint8, Uint8, Uint8)
+        | V6 String
+
+data ReadFileResult = FileHandle | IoErr
+
+-- Main.main
+-- or fn main(argc::Int, args::*const *const Char)
+fn main is
+    let str1 = Node "Some"
+    let str2 = Node "Ymca"
+    let str3 = Node "Yest", Sync
+
+    for c in 0..3 do
+        println "This char is {c}", { str1.name'c }
+    end
+
+
+    -- whlie loop
+    let i = Usize undefined
+    i = 0
+    whlie i < 4 do
+        cio.printf "This char is %c\n", str2.name'i
+    end
+
+
+    -- Unused variant, warning
+    let c = Isize 0
+
+
+    -- use a compile-time-caculating function to fill a memory with random bits
+    fill_bits_rand c, Isize, 1
+
+
+    -- allocate a memory block
+    let mem_chunk_one = PageAllocator.alloc Char, 1024 as *Char
+    let mem_chunk_two = alloc Char, 1024 as *Char
+    -- 延迟执行
+    defer do
+        PageAllocator.free mem_chunk_one
+        free mem_chunk_two
+    end
+
+
+    let today = Date Sunday
+    -- partern matching returns value, unless it is returns Void void.
+    case tody of
+        Sunday | Saturday => println_ "I love tody" ,
+        _ => println_ "No!"
+    end
+end --Main.main

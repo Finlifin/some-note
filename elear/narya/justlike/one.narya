@@ -1,0 +1,2 @@
+mapM_ putStrLn $line(ls -la)
+

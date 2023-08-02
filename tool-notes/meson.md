@@ -1,5 +1,14 @@
 # About Meson Build System
 ---
++ 依赖
+    + 编译时依赖
+    + 静态链接依赖
+    + 动态链接依赖
++ 文件寻址
++ target
++ 编译参数
+
+
 ## **Common Usage**:
 
 >获取/设置环境变量:

@@ -1,0 +1,30 @@
+import MorlinaUI as UI
+
+UI.MainWindow::Object -> Context
+const MainWindow::Context = UI.tainWindow {
+	title = "test window",
+	size = (1000::UInt32, 800::UInt32),
+	location = (0, 0), -- (UInt32, UInt32) | "middle" | "leftright" ...
+	fullscreen = false,
+	context = [Main.MainContext.new]
+}
+
+const MainContext::Context = UI.tox {
+	display = "flex",
+	size = "father",
+	justify_content: "center",
+	align_items = "center",
+	context = [ Text.new "hello, wellcome to the world of MarlinaUI!" ]
+}
+
+const Text = UI.text {
+	font_family = "Noto Sans",
+	font_size   = "32px",
+	text_align  = "center"
+} {
+	onclick _ = UI.Easy.Dialog.log "Wellcome! You just clicked the text content"
+}
+
+main = case UI.testEnvironment of
+		Left err -> panic "Fail to setup application:{}" {[err]}
+		Right env -> MainWindow.setup env

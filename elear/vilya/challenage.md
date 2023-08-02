@@ -10,9 +10,13 @@
     + Applicative <> Combinator
     + Typeclass/Trait/Shape
     + Auto Shape Transfor
+# 系统复杂度、代码易读性的考量
++ 模式匹配
 # api提供方式
++ api -> funtion | typeclass | data | context | macro
 # 代数系统
 # 编译期计算
++ comptime <?> macro <?> template
 # 异步特性
 # 并行特性
 # 性能

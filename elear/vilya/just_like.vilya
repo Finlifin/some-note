@@ -1,0 +1,35 @@
+Buttun::Any -> Context
+Buttun attr = do 
+	...
+
+import NavrastUI.Common as Com
+
+function Buttun (attr::Any) Context 
+	expect attr {
+		!text::String, 
+		width::Pattern{"*pt" | "*px"} | Int | UInt,
+		height::Pattern | Int | UInt,
+		color::Pattern ,
+		background_color::Pattern,
+		ease::Pattern{"ease" | "ease-in" | "ease-out" | "ease-in-out"}
+}
+begin
+	let target = Com.new () ::Context
+	if text notin attr then
+		compileError ("Fail to compile since unfinished call")
+	else 
+		...
+	end
+
+	target.width = case attr.width'Type of
+		Undefined -> 40,
+		Pattern (str) -> analize (str),
+		Int (v) -> v,
+		Uint (v) -> v
+			where
+				analize = \x -> ... ::Int
+	end
+	...
+
+	return target
+end

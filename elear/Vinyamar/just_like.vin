@@ -1,0 +1,59 @@
+import BaraBara
+include "quickjs/quickjs.h" as quickjs
+
+-- Here's a simple field example.
+field Student is
+    name-::*Char,
+    age--::Int32,
+    id---::UInt64,
+
+    function from id::Uint64, name::String -> self do
+        Student (name = name, id = id, age = -1)
+    end
+end
+
+field Animal is
+    Dog String | Cat UInt8 | Lion
+
+    test "new test" do
+        let dog = Animal.Dog String
+    end
+end
+
+field SomeOne is
+    function new -> self do
+        BaraBara.new
+    end
+end
+
+field SomeTwo is
+    function new -> self do
+        BaraBara.new
+    end
+end
+
+field CombineSome is
+    One SomeOne | Two SomeTwo
+
+    function new -> self do
+        CombineSome (One SomeOne.new)
+    end
+end
+
+
+field READ_ONLY is Symbol end
+
+
+function main do
+    let js_runtime = quickjs.JS_NewRuntime
+    defer quickjs.JS_FreeRuntime js_runtime
+    let js_context = quickjs.JS_NewContext js_runtime
+    defer quickjs.JS_FreeContext js_context
+    let code = String "234 + 3425"
+    let file = String "test.js"
+    let js_value   = quickjs.JS_Eval js_context, code, (Core.Mem.len code), quickjs.JS_EVAL_TYPE_GLOBAL
+    defer quickjs.JS_FreeValue js_context, js_value
+    let result = quickjs.JS_VALUE_GET_INT js_value
+
+    println "The result is {}", { js_value }
+end
